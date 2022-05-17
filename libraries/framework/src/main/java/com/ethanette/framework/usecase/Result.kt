@@ -1,4 +1,4 @@
-package com.ethanette.domain.base.model
+package com.ethanette.framework.usecase
 
 /**
  * # Result

@@ -22,6 +22,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "android-template"
 include(
+    ":libraries:framework",
     "domain",
     "data",
     "app"

@@ -1,8 +1,7 @@
-package com.ethanette.domain.base.usecase
+package com.ethanette.framework.usecase
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import com.ethanette.domain.base.model.Result
 
 /**
  * # UseCase
@@ -10,7 +9,7 @@ import com.ethanette.domain.base.model.Result
  * @author ethan
  * @since 2021-11-04
  */
-abstract class UseCase<in P, R>(private val coroutineDispatcher: CoroutineDispatcher) {
+abstract class ResultUseCase<in P, R>(private val coroutineDispatcher: CoroutineDispatcher) {
 
     /**
      * Executes the use case asynchronously and returns a [Result].
