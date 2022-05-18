@@ -7,7 +7,7 @@ package com.ethanette.domain.model
  * @since 2022-05-17
  */
 
-data class Data(
-    val id: Long,
+data class SampleModel(
+    val id: Int,
     var name: String
 )

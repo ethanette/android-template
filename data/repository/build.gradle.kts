@@ -13,6 +13,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":libraries:framework"))
+    implementation(project(":domain"))
     // Test
     testImplementation(libs.junit.junit)
 }
