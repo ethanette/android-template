@@ -1,6 +1,7 @@
 package com.ethanette.data.sample.source
 
 import com.ethanette.data.sample.model.Sample
+import com.ethanette.framework.model.Result
 
 /**
  * # source
@@ -13,8 +14,8 @@ import com.ethanette.data.sample.model.Sample
  */
 interface SampleRemoteDataSource {
 
-    suspend fun getSampleList(): List<Sample>
+    suspend fun getSampleList(): Result<List<Sample>>
 
-    suspend fun getSample(id: Int): Sample?
+    suspend fun getSample(id: Int): Result<Sample>
 
 }

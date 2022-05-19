@@ -1,4 +1,4 @@
-package com.ethanette.framework.usecase
+package com.ethanette.framework.model
 
 /**
  * # Result
@@ -20,5 +20,4 @@ sealed class Result<out T> {
             Loading -> "Loading"
         }
     }
-
 }

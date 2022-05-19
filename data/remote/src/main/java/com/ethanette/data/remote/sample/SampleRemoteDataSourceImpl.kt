@@ -5,6 +5,8 @@ import com.ethanette.data.remote.sample.service.SampleService
 import com.ethanette.data.sample.model.Sample
 import com.ethanette.data.sample.source.SampleRemoteDataSource
 import com.ethanette.framework.mapper.mapFrom
+import com.ethanette.framework.model.Result
+import com.ethanette.framework.network.fetchResponse
 import javax.inject.Inject
 
 /**
@@ -21,12 +23,24 @@ class SampleRemoteDataSourceImpl @Inject constructor(
     private val mapper: SampleInfoMapper
 ) : SampleRemoteDataSource {
 
-    override suspend fun getSampleList(): List<Sample> =
-        service.getSampleList().results?.mapFrom(mapper) ?: emptyList()
+    override suspend fun getSampleList(): Result<List<Sample>> =
+        fetchResponse(
+            request = {
+                service.getSampleList()
+            },
+            mapper = {
+                it.results?.mapFrom(mapper) ?: emptyList()
+            }
+        )
 
-    override suspend fun getSample(id: Int): Sample =
-        service.getSample(id).let {
-            mapper.mapFrom(it)
-        }
+    override suspend fun getSample(id: Int): Result<Sample> =
+        fetchResponse(
+            request = {
+                service.getSample(id)
+            },
+            mapper = {
+                mapper.mapFrom(it)
+            }
+        )
 
 }

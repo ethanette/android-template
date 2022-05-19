@@ -2,6 +2,7 @@ package com.ethanette.data.remote.sample.service
 
 import com.ethanette.data.remote.sample.model.SampleInfo
 import com.ethanette.data.remote.sample.model.SampleResponse
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -17,12 +18,12 @@ import retrofit2.http.Path
 interface SampleService {
 
     @GET(SAMPLE)
-    suspend fun getSampleList(): SampleResponse
+    suspend fun getSampleList(): Response<SampleResponse>
 
     @GET("$SAMPLE/{id}")
     suspend fun getSample(
         @Path("id") id: Int
-    ): SampleInfo
+    ): Response<SampleInfo>
 
     companion object {
         const val SAMPLE = "sample"

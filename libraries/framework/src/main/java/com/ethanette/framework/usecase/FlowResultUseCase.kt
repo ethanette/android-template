@@ -1,5 +1,6 @@
 package com.ethanette.framework.usecase
 
+import com.ethanette.framework.model.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

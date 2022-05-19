@@ -15,7 +15,7 @@ import javax.inject.Inject
  * @since 2022-05-18
  */
 class SampleInfoMapper @Inject constructor(
-) : Mapper<SampleInfo?, Sample>() {
+) : Mapper<SampleInfo, Sample>() {
 
     override fun mapTo(obj: Sample): SampleInfo =
         SampleInfo(
@@ -23,10 +23,10 @@ class SampleInfoMapper @Inject constructor(
             name = obj.name
         )
 
-    override fun mapFrom(obj: SampleInfo?): Sample =
+    override fun mapFrom(obj: SampleInfo): Sample =
         Sample(
-            id = obj?.id ?: 0,
-            name = obj?.name ?: ""
+            id = obj.id ?: 0,
+            name = obj.name ?: ""
         )
 
 }
