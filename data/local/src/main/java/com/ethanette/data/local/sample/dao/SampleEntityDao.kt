@@ -27,4 +27,6 @@ interface SampleEntityDao : BaseDao<SampleEntity> {
     @Query("DELETE FROM ${SampleEntity.TABLE_NAME} WHERE id = :id")
     suspend fun deleteSampleById(id: Int)
 
+    @Query("DELETE FROM ${SampleEntity.TABLE_NAME}")
+    suspend fun deleteSampleList()
 }

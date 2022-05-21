@@ -5,6 +5,7 @@ import com.ethanette.data.local.sample.mapper.SampleEntityMapper
 import com.ethanette.data.sample.model.Sample
 import com.ethanette.data.sample.source.SampleLocalDataSource
 import com.ethanette.framework.mapper.mapFrom
+import com.ethanette.framework.mapper.mapTo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -23,14 +24,17 @@ class SampleLocalDataSourceImpl @Inject constructor(
     private val mapper: SampleEntityMapper
 ) : SampleLocalDataSource {
 
-    override suspend fun insertSample(sample: Sample) =
-        dao.insert(mapper.mapTo(sample))
-
+    override suspend fun insertSampleList(sample: List<Sample>) {
+        dao.insert(sample.mapTo(mapper))
+    }
 
     override fun observeSampleList(): Flow<List<Sample>> =
         dao.observeSampleList().map {
             it.mapFrom(mapper)
         }
+
+    override suspend fun insertSample(sample: Sample) =
+        dao.insert(mapper.mapTo(sample))
 
     override fun observeSample(id: Int): Flow<Sample?> =
         dao.observeSampleById(id).map { it ->
@@ -43,6 +47,10 @@ class SampleLocalDataSourceImpl @Inject constructor(
 
     override suspend fun deleteSample(id: Int) {
         dao.deleteSampleById(id)
+    }
+
+    override suspend fun deleteSampleList() {
+        dao.deleteSampleList()
     }
 
 }

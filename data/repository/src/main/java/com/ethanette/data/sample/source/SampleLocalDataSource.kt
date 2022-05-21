@@ -14,14 +14,18 @@ import kotlinx.coroutines.flow.Flow
  */
 interface SampleLocalDataSource {
 
-    suspend fun insertSample(sample: Sample)
+    suspend fun insertSampleList(sample: List<Sample>)
 
     fun observeSampleList(): Flow<List<Sample>>
+
+    suspend fun insertSample(sample: Sample)
 
     fun observeSample(id: Int): Flow<Sample?>
 
     suspend fun updateSample(sample: Sample)
 
     suspend fun deleteSample(id: Int)
+
+    suspend fun deleteSampleList()
 
 }

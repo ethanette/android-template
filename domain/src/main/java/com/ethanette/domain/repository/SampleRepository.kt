@@ -12,9 +12,13 @@ import kotlinx.coroutines.flow.Flow
  */
 interface SampleRepository {
 
+    fun observeSampleList(): Flow<List<SampleModel>>
+
+    suspend fun refreshSampleList()
+
     fun observeSample(id: Int): Flow<SampleModel?>
 
-    fun observeSampleList(): Flow<List<SampleModel>>
+    suspend fun refreshSample(id: Int)
 
     suspend fun updateSample(sample: SampleModel)
 
