@@ -16,18 +16,19 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("libs") {
-            from("com.github.ethanette:version-catalog:0.1.9")
+            from("com.github.ethanette:version-catalog:0.2.1")
         }
     }
 }
 rootProject.name = "android-template"
 include(
     ":common:theme",
+    ":common:component",
     ":libraries:framework",
     "data:local",
     "data:remote",
     "data:repository",
     "domain",
-    "feature:home",
+    "features:sample",
     "app"
 )

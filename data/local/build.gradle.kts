@@ -16,9 +16,9 @@ dependencies {
     implementation(project(":libraries:framework"))
     implementation(project(":data:repository"))
 
-    implementation("androidx.room:room-ktx:2.4.2")
+    implementation(libs.androidx.room.roomKtx)
     // TODO [ethan] ksp 변경 작업
-    kapt("androidx.room:room-compiler:2.4.2")
+    kapt(libs.androidx.room.roomCompiler)
 
     // Test
     testImplementation(libs.junit.junit)

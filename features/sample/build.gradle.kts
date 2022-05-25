@@ -14,6 +14,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":common:component"))
     implementation(project(":libraries:framework"))
     implementation(project(":domain"))
     // Test
