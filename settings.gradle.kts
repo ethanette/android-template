@@ -22,6 +22,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "android-template"
 include(
+    ":common:theme",
     ":libraries:framework",
     "data:local",
     "data:remote",
