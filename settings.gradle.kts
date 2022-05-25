@@ -27,5 +27,6 @@ include(
     "data:remote",
     "data:repository",
     "domain",
+    "feature:home",
     "app"
 )
