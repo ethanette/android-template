@@ -33,11 +33,11 @@ MVVM Architecture 및 Jetpack components에 따라 구현하였습니다.
 
 ### Project Structure
 
-<img src="/Users/sangjunhan/Workspace/ethanette/android-template/screenshots/structure.png" alt="Project Structure" width="300">
+<img src="screenshots/structure.png" alt="Project Structure" width="300">
 
 ### Module Dependency Structure
 
-<img src="/Users/sangjunhan/Workspace/ethanette/android-template/screenshots/dependency.png" alt="dependency" width="800">
+<img src="screenshots/dependency.png" alt="dependency" width="800">
 
 ### Common
 `common` 레이어는 공통 모듈로 리소스 파일, 테마, 컴포넌트를 담당한다.
@@ -50,27 +50,27 @@ MVVM Architecture 및 Jetpack components에 따라 구현하였습니다.
 
 #### Local
 
-<img src="/Users/sangjunhan/Workspace/ethanette/android-template/screenshots/local.png" alt="local" width="500">
+<img src="screenshots/local.png" alt="local" width="500">
 
 #### Remote
 
-<img src="/Users/sangjunhan/Workspace/ethanette/android-template/screenshots/remote.png" alt="remote" width="500">
+<img src="screenshots/remote.png" alt="remote" width="500">
 
 #### Repository
 
-<img src="/Users/sangjunhan/Workspace/ethanette/android-template/screenshots/data.png" alt="data" width="500">
+<img src="screenshots/data.png" alt="data" width="500">
 
 ### Domain
 `Domain` 레이어는 다른 레이어와 독립적입니다. 이를 통해 도메인 모델 및 비즈니스 로직을 다른 계층과 독립적으로 만들 수 있습니다. 즉, 다른 레이어의 변경
 사항은 `Domain` 레이어에 영향을 미치지 않습니다. 데이터베이스(`Data` 레이어) 또는 화면 UI(`features` 레이어)를 변경해도
 이상적으로는 `Domain` 레이어에서 코드가 변경되지 않습니다.
 
-<img src="/Users/sangjunhan/Workspace/ethanette/android-template/screenshots/domain.png" alt="domain" width="500">
+<img src="screenshots/domain.png" alt="domain" width="500">
 
 ### Presentation
 `features` 레이어는 사용자가 화면에서 보여지는 레이어입니다. 해당 레이어에는 views(activity, compose) and ViewModel이 포함됩니다.
 
-<img src="/Users/sangjunhan/Workspace/ethanette/android-template/screenshots/presentation.png" alt="domain" width="500">
+<img src="screenshots/presentation.png" alt="domain" width="500">
 
 # Tech Stacks
 - [Gradle Kotlin DSL](https://gradle.org/kotlin/)
