@@ -1,5 +1,6 @@
 package com.ethanette.data.local.sample
 
+import androidx.annotation.VisibleForTesting
 import com.ethanette.data.local.sample.dao.SampleEntityDao
 import com.ethanette.data.local.sample.mapper.SampleEntityMapper
 import com.ethanette.data.sample.model.Sample
@@ -20,8 +21,10 @@ import javax.inject.Inject
  * @since 2022-05-18
  */
 class SampleLocalDataSourceImpl @Inject constructor(
-    private val dao: SampleEntityDao,
-    private val mapper: SampleEntityMapper
+    @get:VisibleForTesting
+    internal val dao: SampleEntityDao,
+    @get:VisibleForTesting
+    internal val mapper: SampleEntityMapper
 ) : SampleLocalDataSource {
 
     override suspend fun insertSampleList(sample: List<Sample>) {

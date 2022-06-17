@@ -30,5 +30,6 @@ dependencies {
     implementation(libs.jakewharton.timber.timber)
 
     // Test
+    testImplementation("io.mockk:mockk:1.12.4")
     testImplementation(libs.junit.junit)
 }

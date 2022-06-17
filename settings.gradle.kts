@@ -25,6 +25,7 @@ include(
     ":common:theme",
     ":common:component",
     ":libraries:framework",
+    ":libraries:testutils",
     "data:local",
     "data:remote",
     "data:repository",
